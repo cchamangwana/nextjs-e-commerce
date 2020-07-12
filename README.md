@@ -1,1 +1,1 @@
-## Next Js Eccommerce App
+## Next Js Ecommerce App
