@@ -6,7 +6,7 @@ export default baseUrl;
 */
 
 const baseUrl = process.env.NODE_ENV === "production"
-    ? 'https://chim.ecommerce.now.sh'
+    ? 'https://nextjs-kfbkxffzq.vercel.app'
     : 'http://localhost:3000';
 
 export default baseUrl;
