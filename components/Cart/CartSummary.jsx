@@ -1,7 +1,7 @@
-import React from 'react';
-import StripeCheckout from 'react-stripe-checkout';
-import { Divider, Segment, Button } from 'semantic-ui-react';
-import calculateCartTotal from '../../utils/calculateCartTotal';
+import React from "react";
+import StripeCheckout from "react-stripe-checkout";
+import { Divider, Segment, Button } from "semantic-ui-react";
+import calculateCartTotal from "../../utils/calculateCartTotal";
 
 function CartSummary({ products, handleCheckout }) {
   const [cartAmount, setCartAmount] = React.useState(0);
@@ -9,25 +9,27 @@ function CartSummary({ products, handleCheckout }) {
   const [isCartEmpty, setCartEmpty] = React.useState(false);
 
   React.useEffect(() => {
-    const { cartTotal, stripeTotal } = calculateCartTotal(products)
-    setCartAmount(cartTotal)
-    setStripeAmount(stripeTotal)
+    const { cartTotal, stripeTotal } = calculateCartTotal(products);
+    setCartAmount(cartTotal);
+    setStripeAmount(stripeTotal);
     setCartEmpty(products.length === 0);
-  }, [products])
+  }, [products]);
 
-  return <>
-    <Divider/>
-    <Segment clearing size="large">
-      <strong>Sub total:</strong> ${cartAmount}     
+  return (
+    <>
+      <Divider />
+      <Segment clearing size="large">
+        <strong>Sub total:</strong> ${cartAmount}
         <Button
           disabled={isCartEmpty}
-          icon="cart" 
+          icon="cart"
           color="teal"
           floated="right"
           content="Checkout"
         />
-    </Segment>
-  </>;
+      </Segment>
+    </>
+  );
 }
 
 export default CartSummary;

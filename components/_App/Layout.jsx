@@ -10,7 +10,11 @@ function Layout({ children, user }) {
       <Head>
         <HeadContent />
         {/* Stylesheets */}
-        <link rel="stylesheet" type="text/css" href="/static/semantic.min.css" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="/static/semantic.min.css"
+        />
         <link rel="stylesheet" type="text/css" href="/static/styles.css" />
         <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
         <link
@@ -19,7 +23,7 @@ function Layout({ children, user }) {
         />
         <title>ReactReserve</title>
       </Head>
-      <Header user={user}/>
+      <Header user={user} />
       <Container text style={{ paddingTop: "1em" }}>
         {children}
       </Container>
